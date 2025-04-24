@@ -225,6 +225,18 @@ outlines:
       radius: 2.05
     thumb:
       radius: 2.05
+    cotroller_cover1:
+      what: circle
+      where:
+        - ref: main_index_ext_bottom
+          shift: [kx + 0.5 kx + px, -7]
+      radius: 1.05
+    controller_cover2:
+      what: circle
+      where:
+        - ref: main_index_ext_bottom
+          shift: [0.5kx + 2 px, -7]
+      radius: 1.05
   bottom_outline:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
