@@ -30,6 +30,7 @@ points:
           shift: [0, -5]
   zones:
     main:
+      key.padding: ky
       rows:
         bottom:
           row_net: row_bottom
@@ -72,11 +73,11 @@ points:
             column_net: col_index_ext
     thumb_zone:
       key:
-        padding: cy
-        spread: cx
+        padding: ky
+        spread: kx
       anchor:
         ref: main_index_ext_bottom
-        shift: [-3*cx, -cy]
+        shift: [-3*kx, -ky]
       rows:
         thumb:
           row_net: row_thumb
@@ -100,13 +101,13 @@ points:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [0, -cy+5]
+            shift: [0, -ky+5]
             column_net: col_index
         space:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [-6, -2cy+5 ]
+            shift: [-6, -2ky+3 ]
             column_net: col_index_ext
 
 outlines:
@@ -414,8 +415,8 @@ pcbs:
         what: text
         where:
           ref:
-            - main_pinkie_ext_bottom
-          shift: [0, -0.5 * ky]
+            - main_pinkie_bottom
+          shift: [-px, -0.5 * (ky + 3 py)]
         params:
           text: "kasla v0.1\\nby tomekd85"
           justify: left
@@ -423,9 +424,9 @@ pcbs:
         what: text
         where:
           ref:
-            - main_pinkie_ext_bottom
-          shift: [0, -0.5 * ky]
+            - main_pinkie_bottom
+          shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
           text: "kasla v0.1\\nby tomekd85"
-          justify: right mirror
+          justify: right mirror    
