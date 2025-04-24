@@ -126,6 +126,8 @@ outlines:
           shift: [0.5 kx + 0.5 px, 0.5 ky + 0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
+        - ref: thumb_zone_space_thumb
+          shift: [-0.5 kx + 0.5px, -0.5 py]
         - ref: thumb_zone_layer_thumb
           shift: [-1 kx + 0.5 px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_system_thumb
