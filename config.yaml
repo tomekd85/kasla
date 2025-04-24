@@ -120,15 +120,15 @@ outlines:
     - what: polygon
       points:
         - ref: main_index_ext_home
-          shift: [0.5 kx + 0.5px, -0.5 ky + 0.5 py]
+          shift: [0.5 kx + 0.5 px, -0.5 ky + 0.5 py]
         - ref: thumb_zone_space_thumb
-          shift: [0.5 kx - 0.5px, 0.5 ky + 0.5 py]
+          shift: [0.5 kx + 0.5 px, 0.5 ky + 0.5 py]
         - ref: thumb_zone_space_thumb
-          shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
+          shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_layer_thumb
-          shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
+          shift: [-1 kx + 0.5 px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_system_thumb
-          shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
+          shift: [-0.5 kx + 0.5 px, -0.5 ky - 1.5 py]
         - ref: main_pinkie_ext_bottom
           shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
         - ref: main_pinkie_ext_home
@@ -136,21 +136,21 @@ outlines:
   patch_outer:
     - what: polygon
       points:
-        - ref: main_ring_top
+        - ref: main_ring_numbers
         - ref: main_ring_bottom
         - ref: main_pinkie_ext_bottom
-          shift: [-0.5 (kx + px), 0]
-        - ref: main_pinkie_ext_top
-          shift: [-0.5 (kx + px), 0]
+          shift: [-0.5 (kx + 1.5px), 0]
+        - ref: main_pinkie_ext_numbers
+          shift: [-0.5 (kx + 1.5px), 0]
   patch_inner:
     - what: polygon
       points:
-        - ref: main_index_ext_top
-          shift: [0.5 (kx + px), 0]
+        - ref: main_index_ext_numbers
+          shift: [0.5 (kx + 1.5px), 0]
         - ref: main_index_ext_bottom
-          shift: [0.5 (kx + px), 0]
+          shift: [0.5 (kx + 1.5px), 0]
         - ref: main_index_bottom
-        - ref: main_index_top
+        - ref: main_index_numbers
   controller_area:
     - what: rectangle
       where:
@@ -207,7 +207,7 @@ outlines:
       what: circle
       where:
         - ref: main_index_ext_bottom
-          shift: [kx, 0.7 * -ky]
+          shift: [kx - 2 * px, -0.7 * ky]
       radius: 1.05
   mounting_holes:
     $extends: outlines.screw_holes
@@ -269,7 +269,7 @@ pcbs:
         what: promicro_flippable
         where:
           ref:
-            - main_index_ext_numbers
+            - main_index_ext_top
           shift: [20, -11]
           rotate: 270
         params:
@@ -290,7 +290,7 @@ pcbs:
         what: promicro_flippable
         where:
           ref:
-            - main_index_ext_numbers
+            - main_index_ext_top
           shift: [22.5, -12.25]
           rotate: 270
         params:
@@ -300,8 +300,8 @@ pcbs:
         what: pad
         where:
           ref:
-            - main_index_ext_numbers
-          shift: [23, -6]
+            - main_index_ext_bottom
+          shift: [23, 4]
           rotate: 0
         params:
           front: true
@@ -314,8 +314,8 @@ pcbs:
         what: pad
         where:
           ref:
-            - main_index_ext_numbers
-          shift: [23, -3]
+            - main_index_ext_bottom
+          shift: [23, 7]
           rotate: 0
         params:
           front: true
@@ -413,4 +413,4 @@ pcbs:
         params:
           layer: B.SilkS
           text: "kasla v0.1\\nby tomekd85"
-          justify: right mirror    
+          justify: right mirror
