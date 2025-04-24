@@ -1,9 +1,9 @@
 meta:
   engine: 4.0.4
-  name: samoklava
-  version: 0.3
-  author: soundmonster
-  url: https://github.com/soundmonster/samoklava
+  name: kasla
+  version: 0.1
+  author: tomekd85
+  url: https://github.com/tomekd85/kasla
 units:
   kx: cx
   ky: cy
@@ -29,34 +29,7 @@ points:
         anchor:
           shift: [0, -5]
   zones:
-    matrix:
-      key.padding: ky
-      columns:
-        pinky:
-          key:
-            stagger: 0 ky
-            spread: kx
-            column_net: col_pinky
-        ring:
-          key:
-            stagger: 0.7 ky
-            spread: kx
-            column_net: col_ring
-        middle:
-          key:
-            stagger: 0.2 ky
-            spread: kx
-            column_net: col_middle
-        index:
-          key:
-            stagger: -0.2 ky
-            spread: kx
-            column_net: col_index
-        inner:
-          key:
-            stagger: -0.1 ky
-            spread: kx
-            column_net: col_inner
+    main:
       rows:
         bottom:
           row_net: row_bottom
@@ -64,77 +37,124 @@ points:
           row_net: row_home
         top:
           row_net: row_top
-    thumbfan:
-      anchor:
-        ref: matrix_inner_bottom
-        shift: [-0.5 kx, -1 ky]
+        numbers:
+          row_net: row_numbers
       columns:
-        near:
+        pinkie_ext:
           key:
+            stagger: 0 ky
             spread: kx
-            splay: -15
-            origin: [-0.5 kx, -0.5 ky]
+            column_net: col_pinkie_ext
+        pinkie:
+          key:
+            stagger: 0 ky
+            spread: kx
+            column_net: col_pinkie
+        ring:
+          key:
+            stagger: cy/2
+            spread: kx
+            column_net: col_ring
+        middle:
+          key:
+            stagger: 2
+            spread: kx
             column_net: col_middle
-        home:
+        index:
           key:
+            stagger: -2
             spread: kx
-            splay: -15
-            origin: [-0.5 kx, -0.5 ky]
             column_net: col_index
-        far:
+        index_ext:
           key:
+            stagger: -2
             spread: kx
-            splay: -15
-            origin: [-0.5 kx, -0.5 ky]
-            column_net: col_inner
+            column_net: col_index_ext
+    thumb_zone:
+      key:
+        padding: cy
+        spread: cx
+      anchor:
+        ref: main_index_ext_bottom
+        shift: [-3*cx, -cy]
       rows:
         thumb:
           row_net: row_thumb
+      columns:
+        system:
+          key:
+            column_net: col_pinkie_ext
+        alt:
+          key:
+            stagger: 2
+            column_net: col_pinkie
+        ctrl:
+          key:
+            stagger: -2
+            column_net: col_ring
+        layer:
+          key:
+            stagger: -2
+            column_net: col_middle
+        shift:
+          key:
+            rotate: 0
+            ref: thumb_zone_layer_thumb
+            shift: [0, -cy+5]
+            column_net: col_index
+        space:
+          key:
+            rotate: 0
+            ref: thumb_zone_layer_thumb
+            shift: [-6, -2cy+5 ]
+            column_net: col_index_ext
+
 outlines:
-  # board dimensions according to JLCPCB: 122.28 mm x 101.05 mm
   raw:
     - what: rectangle
       where: true
       asym: source
-      size: [kx + px, ky + py]
+      size: [kx + px + 1, ky + py + 1]
       corner: px
-  thumbfan_glue:
+  thumb_glue:
     - what: polygon
       points:
-        - ref: matrix_inner_bottom
+        - ref: main_index_ext_home
           shift: [0.5 kx + 0.5px, -0.5 ky + 0.5 py]
-        - ref: thumbfan_far_thumb
+        - ref: thumb_zone_space_thumb
           shift: [0.5 kx - 0.5px, 0.5 ky + 0.5 py]
-        - ref: thumbfan_far_thumb
+        - ref: thumb_zone_space_thumb
           shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
-        - ref: thumbfan_near_thumb
+        - ref: thumb_zone_layer_thumb
           shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
-        - ref: matrix_pinky_bottom
+        - ref: thumb_zone_system_thumb
+          shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
+        - ref: main_pinkie_ext_bottom
           shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
-        - ref: matrix_pinky_home
-        - ref: matrix_inner_home
+        - ref: main_pinkie_ext_home
+        - ref: main_index_ext_home
   patch_outer:
     - what: polygon
       points:
-        - ref: matrix_ring_top
-        - ref: matrix_ring_bottom
-        - ref: matrix_pinky_bottom
+        - ref: main_ring_top
+        - ref: main_ring_bottom
+        - ref: main_pinkie_ext_bottom
           shift: [-0.5 (kx + px), 0]
-        - ref: matrix_pinky_top
+        - ref: main_pinkie_ext_top
           shift: [-0.5 (kx + px), 0]
   patch_inner:
     - what: polygon
       points:
-        - ref: matrix_inner_top
+        - ref: main_index_ext_top
           shift: [0.5 (kx + px), 0]
-        - ref: matrix_inner_bottom
+        - ref: main_index_ext_bottom
           shift: [0.5 (kx + px), 0]
-        - ref: matrix_index_bottom
-        - ref: matrix_index_top
+        - ref: main_index_bottom
+        - ref: main_index_top
   controller_area:
     - what: rectangle
       where:
-        - ref: matrix_inner_top
+        - ref: main_index_ext_top
           # re-tranalte to new anchor position
           shift: [32/2 + 0 kx, 76.5/2 - 4.05 ky]
       size: [32, 76.5]
@@ -143,7 +163,7 @@ outlines:
     - what: rectangle
       where: true
       asym: source
-      size: 14
+      size: 14   
   keycaps:
     - what: rectangle 
       where: true
@@ -154,7 +174,7 @@ outlines:
     - "raw"
     - "+patch_inner"
     - "+patch_outer"
-    - "+thumbfan_glue"
+    - "+thumb_glue"
   base_outline:
     - "keywell"
     - "+controller_area"
@@ -162,32 +182,32 @@ outlines:
     top_left:
       what: circle
       where:
-        - ref: matrix_ring_home
+        - ref: main_ring_top
           shift: [-0.5 kx, 0 ky]
       radius: 1.05
     bottom_left:
       what: circle
       where:
-        - ref: matrix_pinky_bottom
+        - ref: main_pinkie_bottom
           shift: [0.5 kx, 0]
       radius: 1.05
     top_right:
       what: circle
       where:
-        - ref: matrix_inner_top
+        - ref: main_index_ext_top
           shift: [-0.5 kx, 0]
       radius: 1.05
     palm:
       what: circle
       where:
-        - ref: matrix_index_bottom
+        - ref: main_index_bottom
           shift: [0, -1.06 ky]
       radius: 1.05
     thumb:
       what: circle
       where:
-        - ref: thumbfan_far_thumb
-          shift: [-0.55 kx, 0]
+        - ref: main_index_ext_bottom
+          shift: [kx, 0.7 * -ky]
       radius: 1.05
   mounting_holes:
     $extends: outlines.screw_holes
@@ -214,21 +234,6 @@ outlines:
     # TODO use footprints with pad + via reinforcement as mounting holes
     - "-mounting_holes"
 pcbs:
-  top_plate:
-    outlines:
-      edge:
-        outline: plate
-        layer: Edge.Cuts
-    footprints:
-      jlc_order_number:
-        what: text
-        where:
-          ref:
-            - matrix_ring_home
-          shift: [-0.25 kx, 0.5 ky]
-        params:
-          text: "JLCJLCJLCJLC"
-          justify: left
   bottom_plate:
     outlines:
       edge:
@@ -243,8 +248,8 @@ pcbs:
       choc_hotswap:
         what: choc
         where:
-          - /matrix_.*/
-          - /thumbfan_.*/
+          - /main_.*/
+          - /thumb_zone_.*/
         params:
           hotswap: true
           reverse: true
@@ -254,8 +259,8 @@ pcbs:
       diode:
         what: diode
         where:
-          - /matrix_.*/
-          - /thumbfan_.*/
+          - /main_.*/
+          - /thumb_zone_.*/
         adjust.shift: [0, -5]
         params:
           from: "{{colrow}}"
@@ -264,26 +269,28 @@ pcbs:
         what: promicro_flippable
         where:
           ref:
-            - matrix_inner_top
+            - main_index_ext_numbers
           shift: [20, -11]
           rotate: 270
         params:
           orientation: up
           silk_layer: B.SilkS
-          P4: row_top
-          P5: row_home
-          P6: row_bottom
-          P7: row_thumb
-          P14: col_inner
+          P4: row_numbers
+          P5: row_top
+          P6: row_home
+          P7: row_bottom
+          P8: row_thumb
+          P14: col_index_ext
           P15: col_index
           P18: col_middle
           P19: col_ring
-          P20: col_pinky
+          P20: col_pinkie
+          P21: col_pinkie_ext
       mcu_l:
         what: promicro_flippable
         where:
           ref:
-            - matrix_inner_top
+            - main_index_ext_numbers
           shift: [22.5, -12.25]
           rotate: 270
         params:
@@ -293,7 +300,7 @@ pcbs:
         what: pad
         where:
           ref:
-            - matrix_inner_top
+            - main_index_ext_numbers
           shift: [23, -6]
           rotate: 0
         params:
@@ -307,7 +314,7 @@ pcbs:
         what: pad
         where:
           ref:
-            - matrix_inner_top
+            - main_index_ext_numbers
           shift: [23, -3]
           rotate: 0
         params:
@@ -321,7 +328,7 @@ pcbs:
         what: trrs_tight
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [32, -15]
           rotate: 270
         params:
@@ -336,7 +343,7 @@ pcbs:
         what: jumper
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -347,7 +354,7 @@ pcbs:
         what: jumper
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -358,7 +365,7 @@ pcbs:
         what: slider_threeway
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [30, 0]
           rotate: 270
         params:
@@ -370,7 +377,7 @@ pcbs:
         what: slider_threeway
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [30, 0]
           rotate: 270
         params:
@@ -382,7 +389,7 @@ pcbs:
         what: reset_button
         where:
           ref:
-            - matrix_inner_bottom
+            - main_index_ext_bottom
           shift: [17, 0]
           rotate: 270
         params:
@@ -392,19 +399,18 @@ pcbs:
         what: text
         where:
           ref:
-            - matrix_pinky_bottom
+            - main_pinkie_ext_bottom
           shift: [0.75 kx, 0]
         params:
-          text: "samoklava v0.3\\nby soundmonster"
+          text: "kasla v0.1\\nby tomekd85"
           justify: left
       info_r:
         what: text
         where:
           ref:
-            - matrix_pinky_bottom
+            - main_pinkie_ext_bottom
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
-          text: "samoklava v0.3\\nby soundmonster"
-          justify: right mirror
-
+          text: "kasla v0.1\\nby tomekd85"
+          justify: right mirror    
