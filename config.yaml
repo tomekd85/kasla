@@ -400,7 +400,7 @@ pcbs:
         where:
           ref:
             - main_pinkie_ext_bottom
-          shift: [0.75 kx, 0]
+          shift: [0, -0.5 * ky]
         params:
           text: "kasla v0.1\\nby tomekd85"
           justify: left
@@ -409,8 +409,8 @@ pcbs:
         where:
           ref:
             - main_pinkie_ext_bottom
-          shift: [0.75 kx, 0]
+          shift: [0, -0.5 * ky]
         params:
           layer: B.SilkS
           text: "kasla v0.1\\nby tomekd85"
-          justify: right mirror
+          justify: right mirror    
