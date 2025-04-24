@@ -84,6 +84,7 @@ points:
       columns:
         system:
           key:
+            stagger: 2
             column_net: col_pinkie_ext
         alt:
           key:
@@ -101,13 +102,13 @@ points:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [0, -ky+5]
+            shift: [0, -ky+4]
             column_net: col_index
         space:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [-6, -2ky+3 ]
+            shift: [-6, -2ky+4 ]
             column_net: col_index_ext
 
 outlines:
@@ -319,7 +320,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [23, 4]
+          shift: [19, -2]
           rotate: 0
         params:
           front: true
@@ -333,7 +334,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [23, 7]
+          shift: [19, 2]
           rotate: 0
         params:
           front: true
@@ -408,7 +409,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [17, 0]
+          shift: [13, 0]
           rotate: 270
         params:
           from: GND
