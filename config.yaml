@@ -201,7 +201,7 @@ outlines:
       what: circle
       where:
         - ref: main_index_bottom
-          shift: [0, -1.06 ky]
+          shift: [0.5 kx, 0.5 * ky ]
       radius: 1.05
     thumb:
       what: circle
@@ -234,6 +234,21 @@ outlines:
     # TODO use footprints with pad + via reinforcement as mounting holes
     - "-mounting_holes"
 pcbs:
+  top_plate:
+    outlines:
+      edge:
+        outline: plate
+        layer: Edge.Cuts
+    footprints:
+      jlc_order_number:
+        what: text
+        where:
+          ref:
+            - main_ring_home
+          shift: [-0.25 kx, 0.5 ky]
+        params:
+          text: "JLCJLCJLCJLC"
+          justify: left
   bottom_plate:
     outlines:
       edge:
@@ -413,4 +428,4 @@ pcbs:
         params:
           layer: B.SilkS
           text: "kasla v0.1\\nby tomekd85"
-          justify: right mirror    
+          justify: right mirror
