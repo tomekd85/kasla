@@ -140,6 +140,12 @@ outlines:
           shift: [0.5 (kx + 1.5px), 0]
         - ref: main_index_bottom
         - ref: main_index_numbers
+  patch_thumb_key:
+    - what: rectangle
+      where: 
+        - ref: thumb_zone_space_thumb
+      size: [kx+ 1.5px, 1.5 ky + 1.5 px]
+      corner: px
   controller_area:
     - what: rectangle
       where:
@@ -164,6 +170,7 @@ outlines:
     - "+patch_inner"
     - "+patch_outer"
     - "+thumb_glue"
+    - "+patch_thumb_key"
   base_outline:
     - "keywell"
     - "+controller_area"
