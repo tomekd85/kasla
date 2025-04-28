@@ -1,6 +1,6 @@
 meta:
   engine: 4.0.4
-  name: kaslager
+  name: kasla
   version: 0.1
   author: tomekd85
   url: https://github.com/tomekd85/kasla
@@ -77,8 +77,8 @@ points:
         spread: kx
       anchor:
         ref: main_index_ext_bottom
-        shift: [0, -ky - 2py ]
-        rotate: -30
+        shift: [px/2, -ky - 2py ]
+        rotate: -29
       rows:
         thumb:
           row_net: row_thumb
@@ -93,7 +93,7 @@ points:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [px/2, -ky/4]
+            shift: [px/2, -ky/4 - py/2]
             column_net: col_index_ext
 
 outlines:
@@ -418,7 +418,7 @@ pcbs:
             - main_pinkie_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "kaslager v0.1\\nby tomekd85"
+          text: "kasla v0.1\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -428,5 +428,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kaslager v0.1\\nby tomekd85"
+          text: "kasla v0.1\\nby tomekd85"
           justify: right mirror    
