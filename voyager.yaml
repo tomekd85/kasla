@@ -1,6 +1,6 @@
 meta:
   engine: 4.0.4
-  name: kasla
+  name: kaslager
   version: 0.1
   author: tomekd85
   url: https://github.com/tomekd85/kasla
@@ -77,38 +77,23 @@ points:
         spread: kx
       anchor:
         ref: main_index_ext_bottom
-        shift: [-3*kx, -ky]
+        shift: [0, -ky - 2py ]
+        rotate: -30
       rows:
         thumb:
           row_net: row_thumb
       columns:
-        system:
-          key:
-            stagger: 2
-            column_net: col_pinkie_ext
         alt:
-          key:
-            stagger: 2
-            column_net: col_pinkie
-        ctrl:
-          key:
-            stagger: -2
-            column_net: col_ring
-        layer:
-          key:
-            stagger: -2
-            column_net: col_middle
-        shift:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [0, -ky+4]
+            shift: [0, 0]
             column_net: col_index
         space:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [-6, -2ky+4 ]
+            shift: [px/2, -ky/4]
             column_net: col_index_ext
 
 outlines:
@@ -129,9 +114,9 @@ outlines:
           shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [-0.5 kx + 0.5px, -0.5 py]
-        - ref: thumb_zone_layer_thumb
+        - ref: thumb_zone_alt_thumb
           shift: [-1 kx + 0.5 px, -0.5 ky - 0.5 py]
-        - ref: thumb_zone_system_thumb
+        - ref: thumb_zone_alt_thumb
           shift: [-0.5 kx + 0.5 px, -0.5 ky - 1.5 py]
         - ref: main_pinkie_ext_bottom
           shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
@@ -433,7 +418,7 @@ pcbs:
             - main_pinkie_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "kasla v0.1\\nby tomekd85"
+          text: "kaslager v0.1\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -443,5 +428,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kasla v0.1\\nby tomekd85"
+          text: "kaslager v0.1\\nby tomekd85"
           justify: right mirror    
