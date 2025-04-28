@@ -58,7 +58,7 @@ points:
             column_net: col_ring
         middle:
           key:
-            stagger: 4
+            stagger: 3.5
             spread: kx
             column_net: col_middle
         index:
