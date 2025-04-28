@@ -172,7 +172,7 @@ outlines:
     - what: rectangle 
       where: true
       asym: source
-      size: [kx - 1, ky - 1] 
+      size: [kx, ky] 
       corner: 2
   keywell:
     - "raw"
