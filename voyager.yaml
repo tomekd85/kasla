@@ -106,12 +106,12 @@ outlines:
   thumb_glue:
     - what: polygon
       points:
-        - ref: main_index_ext_home
-          shift: [0.5 kx + 0.5 px, -0.5 ky + 0.5 py]
-        - ref: thumb_zone_space_thumb
-          shift: [0.5 kx + 0.5 px, 0.5 ky + 0.5 py]
+        - ref: main_index_ext_bottom
+          shift: [1.0 kx + 0.5 px, 0.5 ky + 0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
+        - ref: thumb_zone_space_thumb
+          shift: [-0.5 kx + 0.5px, -0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [-0.5 kx + 0.5px, -0.5 py]
         - ref: thumb_zone_alt_thumb
@@ -151,7 +151,7 @@ outlines:
       where:
         - ref: main_index_ext_top
           # re-tranalte to new anchor position
-          shift: [32/2 + 0 kx, 76.5/2 - 4.05 ky]
+          shift: [32/2 + 0 kx, 50 + 45 - 3.05 ky]
       size: [32, 76.5]
       corner: px
   switches:
