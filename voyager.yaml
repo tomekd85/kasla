@@ -112,14 +112,16 @@ outlines:
           shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [-0.5 kx + 0.5px, -0.5 py]
-        - ref: thumb_zone_space_thumb
-          shift: [-0.5 kx + 0.5px, -0.5 py]
-        - ref: thumb_zone_alt_thumb
-          shift: [-1 kx + 0.5 px, -0.5 ky - 0.5 py]
-        - ref: thumb_zone_alt_thumb
-          shift: [-0.5 kx + 0.5 px, -0.5 ky - 1.5 py]
-        - ref: main_pinkie_ext_bottom
-          shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
+        - ref: main_index_bottom
+          shift: [2.9px, -1 ky - 5 py]
+        - ref: main_index_bottom
+          shift: [2.9px, -1 ky - 0.5 py]
+        - ref: main_middle_bottom
+          shift: [1px, -0.5 ky - 2.8py]
+        - ref: main_middle_bottom
+          shift: [-kx, -0.5 ky - 2.8 py]
+        - ref: main_ring_bottom
+          shift: [-2 kx, -0.5 ky - 0.8py]
         - ref: main_pinkie_ext_home
         - ref: main_index_ext_home
   patch_outer:
@@ -151,7 +153,7 @@ outlines:
       where:
         - ref: main_index_ext_top
           # re-tranalte to new anchor position
-          shift: [32/2 + 0 kx, 50 + 45 - 3.05 ky]
+          shift: [32/2 + 0 kx, 43 - 3.05 ky]
       size: [32, 76.5]
       corner: px
   switches:
