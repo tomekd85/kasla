@@ -321,6 +321,17 @@ pcbs:
         params:
           orientation: down
           silk_layer: F.SilkS
+          P5: row_numbers
+          P6: row_top
+          P7: row_home
+          P8: row_bottom
+          P9: row_thumb
+          P19: col_index_ext
+          P18: col_index
+          P15: col_middle
+          P14: col_ring
+          P16: col_pinkie
+          P10: col_pinkie_ext
       pad_plus:
         what: pad
         where:
