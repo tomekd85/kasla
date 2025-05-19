@@ -5,7 +5,7 @@ meta:
   author: tomekd85
   url: https://github.com/tomekd85/kasla
 units:
-  kx: u
+  kx: cx
   ky: cy
   px: 2
   py: 2
