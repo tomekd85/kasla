@@ -5,7 +5,7 @@ meta:
   author: tomekd85
   url: https://github.com/tomekd85/kasla
 units:
-  kx: cx
+  kx: u
   ky: cy
   px: 2
   py: 2
@@ -53,22 +53,22 @@ points:
             column_net: col_pinkie
         ring:
           key:
-            stagger: cy/2
+            stagger: 13
             spread: kx
             column_net: col_ring
         middle:
           key:
-            stagger: 2
+            stagger: 5.3
             spread: kx
             column_net: col_middle
         index:
           key:
-            stagger: -2
+            stagger: -3.5
             spread: kx
             column_net: col_index
         index_ext:
           key:
-            stagger: -2
+            stagger: -0.7
             spread: kx
             column_net: col_index_ext
     thumb_zone:
@@ -77,38 +77,23 @@ points:
         spread: kx
       anchor:
         ref: main_index_ext_bottom
-        shift: [-3*kx, -ky]
+        shift: [-px, -ky - py ]
+        rotate: -15
       rows:
         thumb:
           row_net: row_thumb
       columns:
-        system:
-          key:
-            stagger: 2
-            column_net: col_pinkie_ext
         alt:
-          key:
-            stagger: 2
-            column_net: col_pinkie
-        ctrl:
-          key:
-            stagger: -2
-            column_net: col_ring
-        layer:
-          key:
-            stagger: -2
-            column_net: col_middle
-        shift:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [0, -ky+4]
+            shift: [0, 0]
             column_net: col_index
         space:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [-6, -2ky+4 ]
+            shift: [0, -ky/4 - py/2]
             column_net: col_index_ext
 
 outlines:
@@ -129,10 +114,8 @@ outlines:
           shift: [0.5 kx + 0.5px, -0.5 ky - 0.5 py]
         - ref: thumb_zone_space_thumb
           shift: [-0.5 kx + 0.5px, -0.5 py]
-        - ref: thumb_zone_layer_thumb
+        - ref: thumb_zone_alt_thumb
           shift: [-1 kx + 0.5 px, -0.5 ky - 0.5 py]
-        - ref: thumb_zone_system_thumb
-          shift: [-0.5 kx + 0.5 px, -0.5 ky - 1.5 py]
         - ref: main_pinkie_ext_bottom
           shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
         - ref: main_pinkie_ext_home
@@ -155,12 +138,18 @@ outlines:
           shift: [0.5 (kx + 1.5px), 0]
         - ref: main_index_bottom
         - ref: main_index_numbers
+  patch_thumb_key:
+    - what: rectangle
+      where: 
+        - ref: thumb_zone_space_thumb
+      size: [kx+ 1.5px, 1.5 ky + 1.5 px]
+      corner: px
   controller_area:
     - what: rectangle
       where:
         - ref: main_index_ext_top
           # re-tranalte to new anchor position
-          shift: [32/2 + 0 kx, 76.5/2 - 4.05 ky]
+          shift: [32/2 + 0 kx, 76.5/2 - 3 ky + px]
       size: [32, 76.5]
       corner: px
   switches:
@@ -173,12 +162,13 @@ outlines:
       where: true
       asym: source
       size: [kx, ky] 
-      corner: 1
+      corner: 2
   keywell:
     - "raw"
     - "+patch_inner"
     - "+patch_outer"
     - "+thumb_glue"
+    - "+patch_thumb_key"
   base_outline:
     - "keywell"
     - "+controller_area"
@@ -433,7 +423,7 @@ pcbs:
             - main_pinkie_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "kasla v0.1\\nby tomekd85"
+          text: "kasla v0.2\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -443,5 +433,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kasla v0.1\\nby tomekd85"
+          text: "kasla v0.2\\nby tomekd85"
           justify: right mirror    
