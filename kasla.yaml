@@ -120,24 +120,25 @@ outlines:
           shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
         - ref: main_pinkie_ext_home
         - ref: main_index_ext_home
+
   patch_outer:
-    - what: polygon
-      points:
-        - ref: main_ring_numbers
-        - ref: main_ring_bottom
+    - what: rectangle
+      where:
         - ref: main_pinkie_ext_bottom
-          shift: [-0.5 (kx + 1.5px), 0]
-        - ref: main_pinkie_ext_numbers
-          shift: [-0.5 (kx + 1.5px), 0]
+          # re-tranalte to new anchor position
+          shift: [2kx + 7.5, 2 ky + 1]
+      size: [6kx, 5ky + 2.5 py]
+      corner: px
+  
   patch_inner:
-    - what: polygon
-      points:
-        - ref: main_index_ext_numbers
-          shift: [0.5 (kx + 1.5px), 0]
+    - what: rectangle
+      where:
         - ref: main_index_ext_bottom
-          shift: [0.5 (kx + 1.5px), 0]
-        - ref: main_index_bottom
-        - ref: main_index_numbers
+          # re-tranalte to new anchor position
+          shift: [kx - 4, ky + 3.2py ]
+      size: [2kx, 5ky]
+      corner: px
+
   patch_thumb_key:
     - what: rectangle
       where: 
@@ -423,7 +424,7 @@ pcbs:
             - main_pinkie_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "kasla v0.2\\nby tomekd85"
+          text: "kasla v0.1\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -433,5 +434,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kasla v0.2\\nby tomekd85"
+          text: "kasla v0.1\\nby tomekd85"
           justify: right mirror    
