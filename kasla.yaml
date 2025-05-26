@@ -297,17 +297,17 @@ pcbs:
         params:
           orientation: up
           silk_layer: B.SilkS
-          P4: row_numbers
-          P5: row_top
-          P6: row_home
-          P7: row_bottom
-          P8: row_thumb
-          P14: col_index_ext
-          P15: col_index
-          P18: col_middle
-          P19: col_ring
-          P20: col_pinkie
-          P21: col_pinkie_ext
+          P5: row_numbers
+          P6: row_top
+          P7: row_home
+          P8: row_bottom
+          P9: row_thumb
+          P19: col_index_ext
+          P18: col_index
+          P15: col_middle
+          P14: col_ring
+          P16: col_pinkie
+          P10: col_pinkie_ext
       mcu_l:
         what: promicro_flippable
         where:
@@ -318,6 +318,17 @@ pcbs:
         params:
           orientation: down
           silk_layer: F.SilkS
+          P5: row_numbers
+          P6: row_top
+          P7: row_home
+          P8: row_bottom
+          P9: row_thumb
+          P19: col_index_ext
+          P18: col_index
+          P15: col_middle
+          P14: col_ring
+          P16: col_pinkie
+          P10: col_pinkie_ext
       pad_plus:
         what: pad
         where:
