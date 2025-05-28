@@ -1,7 +1,7 @@
 meta:
   engine: 4.0.4
   name: kasla
-  version: 0.3
+  version: 0.4
   author: tomekd85
   url: https://github.com/tomekd85/kasla
 units:
@@ -53,12 +53,12 @@ points:
             column_net: col_pinkie
         ring:
           key:
-            stagger: 12
+            stagger: 0.5 ky
             spread: kx
             column_net: col_ring
         middle:
           key:
-            stagger: 5.3
+            stagger: 5
             spread: kx
             column_net: col_middle
         index:
@@ -68,7 +68,7 @@ points:
             column_net: col_index
         index_ext:
           key:
-            stagger: -0.7
+            stagger: -1.5
             spread: kx
             column_net: col_index_ext
     thumb_zone:
@@ -77,8 +77,8 @@ points:
         spread: kx
       anchor:
         ref: main_index_ext_bottom
-        shift: [-2px, -ky - py ]
-        rotate: -15
+        shift: [0, -ky ]
+        rotate: -0
       rows:
         thumb:
           row_net: row_thumb
@@ -93,7 +93,7 @@ points:
           key:
             rotate: 0
             ref: thumb_zone_layer_thumb
-            shift: [0, -ky/4 - py/2]
+            shift: [0, 0]
             column_net: col_index_ext
 
 outlines:
@@ -135,15 +135,15 @@ outlines:
       where:
         - ref: main_index_ext_bottom
           # re-tranalte to new anchor position
-          shift: [kx - 4, 1.5ky + 5 ]
-      size: [2kx, 3ky + 10]
+          shift: [kx - 4, 1ky ]
+      size: [2kx, 5ky + 1.5py]
       corner: px
 
   patch_thumb_key:
     - what: rectangle
       where: 
         - ref: thumb_zone_space_thumb
-      size: [kx+ 1.5px, 1.5 ky + 1.5 px]
+      size: [kx+ 1.5px, 1 ky + 1.5 px]
       corner: px
   controller_area:
     - what: rectangle
@@ -435,7 +435,7 @@ pcbs:
             - main_middle_bottom
           shift: [-0.5kx +px, -0.5 * (ky + 3 py)]
         params:
-          text: "kasla v0.2\\n by tomekd85"
+          text: "kasla v0.4\\n by tomekd85"
           justify: left
       info_r:
         what: text
@@ -445,5 +445,5 @@ pcbs:
           shift: [-0.5kx +px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kasla v0.2\\n by tomekd85"
+          text: "kasla v0.4\\n by tomekd85"
           justify: right mirror    
