@@ -63,7 +63,7 @@ points:
             column_net: col_middle
         index:
           key:
-            stagger: -3.5
+            stagger: -5
             spread: kx
             column_net: col_index
         index_ext:
@@ -115,7 +115,7 @@ outlines:
         - ref: thumb_zone_space_thumb
           shift: [-1 kx + 0.5px, 0.5 py]
         - ref: main_index_bottom
-          shift: [ 0.5 px, -0.5 ky - py]
+          shift: [ 0.5 px, -0.5 ky]
         - ref: main_ring_bottom
           shift: [ 0.5 px, -0.5 ky]
         - ref: main_pinkie_ext_home
