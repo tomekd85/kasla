@@ -25,3 +25,10 @@ When I work KaslaWW it feels like index column could be a little bit lower becau
 
 !!! Stay  on current index finger column stagger
 
+
+## Next day thoughts. 
+Working on Sofle seems to not tear my pinkie even though I have exactly the same keymap as on my Kasla keyboard. Maybe I should consider changing layout to more Sofle like stagger with choc switches and then Voyager like thumb cluster with smaller rotation angle of thumb keys.
+
+I think for now I will go more conservative and try choc sofle with rotated thumb cluster as it seems to fit my hand best.
+
+
