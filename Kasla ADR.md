@@ -31,4 +31,16 @@ Working on Sofle seems to not tear my pinkie even though I have exactly the same
 
 I think for now I will go more conservative and try choc sofle with rotated thumb cluster as it seems to fit my hand best.
 
+## Next loose thought - I don't have time to translate it to English
 
+Ta klawiatura(Voyager) chyba jednak jest całkiem fajna tylko muszę się do niej trochę przekonać. Może zamiast wymyślać nową klawiaturę powinienem trochę więcej popracować na tej. Wygląda na to, że przy tej klawiaturze mniej bolą mnie nadgarstki i palce. Jest tylko kwestia przyzwyczajenia. 
+
+Wygląda na to, że najlepiej faktycznie będzie zrobić wersję choc voyagera i wtedy może się ona okazać najlepszą klawiaturą. Jedyne czego się obawiam to to, że kiedyś być może będe chciał mieć klawiaturę w laptopie Framework 16 która będzie w stu procentach ustawialna i wtedy voyager nie zmieści się w miejscu gdzie ma być klawiatura.
+
+Po jednym dniu na zsa Voyager zaczynam rozumieć co mnie w tej klawiaturze irytuje. Dłoń jest za bardzo zwrócona do środka. Nie do końca wiem jeszcze z czego to wynika. Pierwszy wniosek jaki przychodzi mi do głowy to to, że muszę daleko sięgać małym palcem do klawisza backspace i tab. Może ten problem zniknie w momencie gdy klawiatura będzie "'choc' spaced".
+
+Widać że ten pinkie stagger ma duży wpływ na to jak powinien być pochylony thumb cluster. Mam nadzieję, że uda mi się znaleźć optymalne ustawienie tak, żeby mieć optymalną klawiaturę.
+
+Pisząc na Voyagerze, ma się wrażenie, że stagger małego palca mógłby być trochę większy. Aczkolwiek jak próbuję pisać na Kasli gdzie ten stagger nie wydaje się aż taki straszny to jednak czuć, że coś jest nie tak. 
+
+Może póki co najlepiej będzie zrobić 2 Voyagery i popracować trochę na nich. Wygląda na to, że dzięki temu, że jest w nich MX spacing i mały stagger na małym palcu, a klawisze kciuka są łatwo namierzalne ręce mało się na niej męczą.
