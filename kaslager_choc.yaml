@@ -199,7 +199,7 @@ outlines:
       what: circle
       where:
         - ref: main_index_bottom
-          shift: [0.5 kx - px, -0.5 * ky - py ]
+          shift: [0.5 kx - 3px, -0.5 * ky - py ]
       radius: 1.05
     thumb:
       what: circle
@@ -208,17 +208,6 @@ outlines:
           shift: [kx - 2 * px, -0.7 * ky]
       radius: 1.05
   mounting_holes:
-    $extends: outlines.screw_holes
-    top_left:
-      radius: 2.05
-    bottom_left:
-      radius: 2.05
-    top_right:
-      radius: 2.05
-    palm:
-      radius: 2.05
-    thumb:
-      radius: 2.05
     cotroller_cover1:
       what: circle
       where:
