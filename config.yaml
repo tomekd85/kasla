@@ -1,7 +1,7 @@
 meta:
   engine: 4.0.4
   name: kasla
-  version: 0.5
+  version: 0.1
   author: tomekd85
   url: https://github.com/tomekd85/kasla
 units:
@@ -113,7 +113,7 @@ outlines:
         - ref: thumb_zone_space_thumb
           shift: [-0.5 kx + 0.5px, -0.5 py]
         - ref: main_index_bottom
-          shift: [3.5px, -1 ky - 4 py]
+          shift: [3.5px, -1 ky - 4.5 py]
         - ref: main_index_bottom
           shift: [3.5px, -1 ky - 0.5 py]
         - ref: main_middle_bottom
@@ -425,7 +425,7 @@ pcbs:
             - main_middle_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "Kasla v0.5\\nby tomekd85"
+          text: "kaslager v0.2\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -435,5 +435,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "Kasla v0.5\\nby tomekd85"
+          text: "kaslager v0.2\\nby tomekd85"
           justify: right mirror
