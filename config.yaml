@@ -207,6 +207,7 @@ outlines:
         - ref: main_index_ext_bottom
           shift: [kx - 2 * px, -0.7 * ky]
       radius: 1.05
+  mounting_holes:
     cotroller_cover1:
       what: circle
       where:
@@ -230,6 +231,7 @@ outlines:
   pcb:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
+    - "-mounting_holes"
 pcbs:
   top_plate:
     outlines:
