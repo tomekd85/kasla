@@ -1,6 +1,3 @@
-TODO: 
-  add element which will help mounting the keyboard to tripod mounts
-
 meta:
   engine: 4.0.4
   name: kasla
@@ -184,7 +181,7 @@ outlines:
       what: circle
       where:
         - ref: main_ring_top
-          shift: [-0.5 kx, 0 ky]
+          shift: [-0.5 kx, 0.5 ky]
       radius: 1.05
     bottom_left:
       what: circle
@@ -196,13 +193,13 @@ outlines:
       what: circle
       where:
         - ref: main_index_ext_top
-          shift: [-0.5 kx, 0]
+          shift: [-0.5 kx, ky - py]
       radius: 1.05
     palm:
       what: circle
       where:
         - ref: main_index_bottom
-          shift: [0.5 kx, 0.5 * ky ]
+          shift: [0.5 kx - px, -0.5 * ky - py ]
       radius: 1.05
     thumb:
       what: circle
@@ -452,4 +449,4 @@ pcbs:
         params:
           layer: B.SilkS
           text: "kaslager v0.2\\nby tomekd85"
-          justify: right mirror    
+          justify: right mirror
