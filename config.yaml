@@ -207,18 +207,6 @@ outlines:
         - ref: main_index_ext_bottom
           shift: [kx - 2 * px, -0.7 * ky]
       radius: 1.05
-  mounting_holes:
-    $extends: outlines.screw_holes
-    top_left:
-      radius: 2.05
-    bottom_left:
-      radius: 2.05
-    top_right:
-      radius: 2.05
-    palm:
-      radius: 2.05
-    thumb:
-      radius: 2.05
     cotroller_cover1:
       what: circle
       where:
@@ -242,7 +230,6 @@ outlines:
   pcb:
     - "base_outline"
     # TODO use footprints with pad + via reinforcement as mounting holes
-    - "-mounting_holes"
 pcbs:
   top_plate:
     outlines:
