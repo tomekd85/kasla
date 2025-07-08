@@ -1,3 +1,4 @@
+
 meta:
   engine: 4.0.4
   name: kasla
@@ -152,8 +153,8 @@ outlines:
       where:
         - ref: main_index_ext_top
           # re-tranalte to new anchor position
-          shift: [32/2 + 0 kx + px, 43 - 3.05 ky - 2 py]
-      size: [32, 60]
+          shift: [32/2 + 0 kx + px, 43 - 3.05 ky - 4 py]
+      size: [32, 70]
       corner: px
   switches:
     - what: rectangle
@@ -282,7 +283,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_top
-          shift: [22, -1]
+          shift: [22, 0]
           rotate: 270
         params:
           orientation: up
@@ -303,7 +304,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_top
-          shift: [24.5, -2.25]
+          shift: [24.5, -1.25]
           rotate: 270
         params:
           orientation: down
@@ -324,7 +325,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [21, 9]
+          shift: [15, -2]
           rotate: 0
         params:
           front: true
@@ -338,7 +339,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [21, 12]
+          shift: [15, 1]
           rotate: 0
         params:
           front: true
