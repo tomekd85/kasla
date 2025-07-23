@@ -172,7 +172,7 @@ outlines:
     - "+patch_inner"
     - "+patch_outer"
     - "+thumb_glue"
-    - "+patch_thumb_key"
+ #   - "+patch_thumb_key"
   base_outline:
     - "keywell"
     - "+controller_area"
