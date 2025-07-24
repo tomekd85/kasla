@@ -10,6 +10,7 @@ units:
   ky: cy
   px: 2
   py: 2
+  eoff: -4
 points:
   key:
     footprints:
@@ -153,8 +154,8 @@ outlines:
       where:
         - ref: main_index_ext_top
           # re-tranalte to new anchor position
-          shift: [32/2 + 0 kx + px, 43 - 3.05 ky - 4 py]
-      size: [32, 70]
+          shift: [32/2 + 0 kx + px, 43 - 3.05 ky - 4 py - eoff]
+      size: [32, 64]
       corner: px
   switches:
     - what: rectangle
@@ -212,13 +213,13 @@ outlines:
       what: circle
       where:
         - ref: main_index_ext_bottom
-          shift: [kx + 0.5 kx + 2 px, -6]
+          shift: [kx + 0.5 kx + 2 px, -6 - eoff]
       radius: 1.05
     controller_cover2:
       what: circle
       where:
         - ref: main_index_ext_bottom
-          shift: [0.5kx + 3 px, -6]
+          shift: [0.5kx + 3 px, -6 - eoff]
       radius: 1.05
   bottom_outline:
     - "base_outline"
@@ -283,7 +284,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_top
-          shift: [22, 0]
+          shift: [21.5, 0 - eoff]
           rotate: 270
         params:
           orientation: up
@@ -304,7 +305,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_top
-          shift: [24.5, -1.25]
+          shift: [24, -1.25 - eoff]
           rotate: 270
         params:
           orientation: down
@@ -325,7 +326,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [15, -2]
+          shift: [15, -2 - eoff]
           rotate: 0
         params:
           front: true
@@ -339,7 +340,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [15, 1]
+          shift: [15, 1 - eoff]
           rotate: 0
         params:
           front: true
@@ -353,7 +354,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [34, -1]
+          shift: [34, -1 - eoff]
           rotate: 270
         params:
           reverse: true
@@ -368,7 +369,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [26, 9]
+          shift: [26, 9 - eoff]
           rotate: 270
         params:
           side: B
@@ -379,7 +380,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [26, 9]
+          shift: [26, 9 - eoff]
           rotate: 270
         params:
           side: F
@@ -390,7 +391,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [32.5, 10]
+          shift: [32.5, 10 - eoff]
           rotate: 270
         params:
           side: F
@@ -402,7 +403,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [32.5, 10]
+          shift: [32.5, 10 - eoff]
           rotate: 270
         params:
           side: B
@@ -414,7 +415,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [15, 8]
+          shift: [15, 8 - eoff]
           rotate: 270
         params:
           from: GND
@@ -426,7 +427,7 @@ pcbs:
             - main_middle_bottom
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
-          text: "kaslager v0.2\\nby tomekd85"
+          text: "kasla v0.6\\nby tomekd85"
           justify: left
       info_r:
         what: text
@@ -436,5 +437,5 @@ pcbs:
           shift: [-px, -0.5 * (ky + 3 py)]
         params:
           layer: B.SilkS
-          text: "kaslager v0.2\\nby tomekd85"
+          text: "kasla v0.6\\nby tomekd85"
           justify: right mirror
