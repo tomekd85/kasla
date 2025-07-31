@@ -369,7 +369,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [26, 9 - eoff]
+          shift: [26, 12 - eoff]
           rotate: 270
         params:
           side: B
@@ -380,7 +380,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [26, 9 - eoff]
+          shift: [26, 12 - eoff]
           rotate: 270
         params:
           side: F
@@ -391,7 +391,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [32.5, 10 - eoff]
+          shift: [32.5, 11 - eoff]
           rotate: 270
         params:
           side: F
@@ -403,7 +403,7 @@ pcbs:
         where:
           ref:
             - main_index_ext_bottom
-          shift: [32.5, 10 - eoff]
+          shift: [32.5, 11 - eoff]
           rotate: 270
         params:
           side: B
