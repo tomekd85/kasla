@@ -175,7 +175,7 @@ module.exports = {
       return `
         ${standard}
         ${p.keycaps ? keycap : ''}
-        ${pins('-', '', 'B')})
+        )
         `
 //    }
   }
